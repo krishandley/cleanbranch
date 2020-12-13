@@ -9,3 +9,5 @@ In your ~/.zshrc file
 ```zsh
 alias cleanbranch="~/cleanbranch/cleanbranch"
 ```
+
+Then in your project just run `cleanbranch`

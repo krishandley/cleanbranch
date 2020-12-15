@@ -60,6 +60,13 @@ func gitFetch() {
 	printErr(err)
 }
 
+func gitPrune() {
+	fmt.Println(" -> git remote prune origin")
+	cmd := exec.Command("git", "remote", "prune", "origin")
+	err := cmd.Run()
+	printErr(err)
+}
+
 func cleanBranchNames(lines []string) []string {
 	ls := make([]string, 0)
 	for _, v := range lines {
@@ -166,6 +173,7 @@ func checkBehind(str string, branch string) {
 
 func main() {
 	gitFetch()
+	gitPrune()
 	brn := branches()
 
 	for _, name := range brn {
